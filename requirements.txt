@@ -3,4 +3,4 @@ numpy
 pandas
 scikit_learn
 streamlit
-altair.vegalite.v4
+altair==4.2.2
