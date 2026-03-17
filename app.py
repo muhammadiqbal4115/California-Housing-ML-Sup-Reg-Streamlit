@@ -514,7 +514,7 @@ if submit:
         prediction        = model.predict(transformed_input)[0]
 
     # ── Result display ──
-    st.divider()
+    # st.divider()
     res_col1, res_col2, res_col3 = st.columns(3)
     with res_col1:
         st.metric("📍 Location", f"{latitude:.2f}°N  {abs(longitude):.2f}°W")
