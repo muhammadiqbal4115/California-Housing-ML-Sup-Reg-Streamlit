@@ -40,6 +40,29 @@ st.markdown("""
     --danger:    #ff4d4d;
 }
 
+/* ── Hide bottom-right Streamlit badges & share button ── */
+[data-testid="stAppDeployButton"],
+.stAppDeployButton,
+[class*="AppDeployButton"],
+[data-testid="stChatFloatingInputContainer"],
+.viewerBadge_container__r5tak,
+.viewerBadge_link__qRIco,
+[class*="viewerBadge"],
+[class*="ProfileBadge"],
+._profilePreviewBadge_gzau3_91,
+._container_gzau3_1,
+._profileContainer_gzau3_53,
+[class*="_profileContainer"],
+[class*="_container_gzau3"],
+[class*="_viewerBadge"],
+iframe[title="streamlit_analytics2"],
+iframe[title="streamlit_analytics"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 html, body, [data-testid="stAppViewContainer"],
 [data-testid="stHeader"], [data-testid="stToolbar"] {
     background-color: var(--bg) !important;
@@ -424,8 +447,6 @@ with st.sidebar:
 - **Median Income** — in tens of thousands USD  
 - **Ocean Proximity** — categorical location tag  
     """)
-    # st.divider()
-    st.caption("Psst… explore the UI — there might be a hidden surprise 👀")
 
 # ─────────────────────────────────────────────
 #  FILE PATHS
