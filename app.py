@@ -416,6 +416,55 @@ body::after {
     if (e.target === this) closeEgg();
   });
 </script>
+<script>
+// ── Aggressively hide bottom-right Streamlit badges ──
+function nukeStreamlitBadges() {
+    // Target by position: fixed, bottom-right elements
+    const allElements = document.querySelectorAll('*');
+    allElements.forEach(el => {
+        const style = window.getComputedStyle(el);
+        const rect  = el.getBoundingClientRect();
+        const isBottomRight = rect.bottom >= window.innerHeight - 80 
+                           && rect.right  >= window.innerWidth  - 120
+                           && rect.width  < 120 
+                           && rect.height < 80;
+        if (style.position === 'fixed' && isBottomRight) {
+            el.style.setProperty('display',    'none', 'important');
+            el.style.setProperty('visibility', 'hidden', 'important');
+            el.style.setProperty('opacity',    '0',    'important');
+        }
+    });
+
+    // Also nuke by known partial class/attribute patterns
+    const patterns = [
+        '[class*="viewerBadge"]',
+        '[class*="ProfileBadge"]',
+        '[class*="AppDeploy"]',
+        '[class*="_profileContainer"]',
+        '[class*="_container_gzau3"]',
+        '[class*="stDeployButton"]',
+        '[data-testid="stAppDeployButton"]',
+        'iframe[title*="streamlit"]',
+    ];
+    patterns.forEach(sel => {
+        document.querySelectorAll(sel).forEach(el => {
+            el.style.setProperty('display', 'none', 'important');
+        });
+    });
+}
+
+// Run immediately
+nukeStreamlitBadges();
+
+// Run after DOM mutations (Streamlit injects elements late)
+const observer = new MutationObserver(() => nukeStreamlitBadges());
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Also run on a short delay for late-loading elements
+setTimeout(nukeStreamlitBadges, 500);
+setTimeout(nukeStreamlitBadges, 1500);
+setTimeout(nukeStreamlitBadges, 3000);
+</script>
 """, unsafe_allow_html=True)
 
 # ─────────────────────────────────────────────
