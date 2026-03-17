@@ -50,6 +50,7 @@ html, body, [data-testid="stAppViewContainer"],
 /* ── HIDE ALL STREAMLIT DEFAULT UI CHROME ── */
 /* Hamburger menu / top-right toolbar */
 [data-testid="stToolbar"],
+._profileContainer_gzau3_53,
 ._profileImage_gzau3_78 _darkThemeShadow_gzau3_91,
 ._container_gzau3_1 _viewerBadge_nim44_23,
 [data-testid="stDecoration"],
