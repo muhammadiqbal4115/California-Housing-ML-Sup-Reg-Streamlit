@@ -51,12 +51,12 @@ html, body, [data-testid="stAppViewContainer"],
 /* Hamburger menu / top-right toolbar */
 [data-testid="stToolbar"],
 ._profileContainer_gzau3_53,
-._profileImage_gzau3_78, ._darkThemeShadow_gzau3_91,
-._profileImage_gzau3_78, ._darkThemeShadow_gzau3_91,
 ._container_gzau3_1 _viewerBadge_nim44_23,
 [data-testid="stDecoration"],
 [data-testid="stStatusWidget"],
 header[data-testid="stHeader"] { display: none !important; }
+
+._darkThemeShadow_gzau3_91 { display: none !important; visibility: hidden !important; }
 
 /* "Manage app" button + bottom-right badge */
 [data-testid="manage-app-button"],
@@ -99,6 +99,8 @@ footer *,
 /* Running indicator dots */
 [data-testid="stStatusWidget"],
 .stStatusWidget { display: none !important; visibility: hidden !important; }
+
+
 
 /* scrollbar */
 ::-webkit-scrollbar { width: 6px; }
