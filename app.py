@@ -407,7 +407,7 @@ with st.sidebar:
 **Scaler:** StandardScaler  
 **Encoding:** OneHotEncoder  
     """)
-    st.divider()
+    # st.divider()
     st.markdown("### 🔬 INPUT GUIDE")
     st.markdown("""
 - **Longitude / Latitude** — block location  
@@ -418,7 +418,7 @@ with st.sidebar:
 - **Median Income** — in tens of thousands USD  
 - **Ocean Proximity** — categorical location tag  
     """)
-    st.divider()
+    # st.divider()
     st.caption("Psst… explore the UI — there might be a hidden surprise 👀")
 
 # ─────────────────────────────────────────────
